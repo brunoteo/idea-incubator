@@ -10,10 +10,11 @@ Read-only summary of any idea's current state. Never modifies artifacts.
 
 ## On Start
 
-1. If `$ARGUMENTS` is provided, use it as the idea slug. Otherwise ask: "Which idea?"
-2. Set the working directory to `ideas/<idea-slug>/`.
-3. Read every artifact that exists in the folder: CONCEPT.md, VALIDATION.md, GTM.md, FEASIBILITY.md, MVP.md, DECISION.md.
-4. If no artifacts exist: "No artifacts found for `<slug>`. Nothing to recap."
+1. Read `CONVENTIONS.md` for shared conventions (artifact filenames, slug convention).
+2. If `$ARGUMENTS` is provided, use it as the idea slug. Otherwise ask: "Which idea? (folder name under ideas/)"
+3. Set the working directory to `ideas/<idea-slug>/`.
+4. Read every artifact that exists in the folder: CONCEPT.md, VALIDATION.md, GTM.md, FEASIBILITY.md, MVP.md, DECISION.md.
+5. If no artifacts exist: "No artifacts found for `<slug>`. Nothing to recap."
 
 ## What to Output
 
