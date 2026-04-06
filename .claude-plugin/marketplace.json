@@ -6,7 +6,10 @@
   "plugins": [
     {
       "name": "idea-incubator",
-      "source": ".",
+      "source": {
+        "source": "github",
+        "repo": "brunoteo/idea-incubator"
+      },
       "description": "Push business ideas from raw thought to a defensible go/park/kill verdict"
     }
   ]
