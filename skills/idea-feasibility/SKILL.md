@@ -76,7 +76,7 @@ Don't assume compliance is simple. "We'll just handle it" is a red flag. If the 
 
 | Drift toward | Response |
 |---|---|
-| Revisiting problem or demand | "That's VALIDATION.md territory. If you want to revise it, rerun `/idea-validate`. Here we're evaluating whether the validated problem can be feasibly addressed." |
+| Revisiting problem or demand | "That's VALIDATION.md territory. If you want to revise it, rerun `/idea-incubator:idea-validate`. Here we're evaluating whether the validated problem can be feasibly addressed." |
 | Distribution strategy changes | "Channel strategy lives in GTM.md. If feasibility suggests a channel won't work at scale, I'll note the gap." |
 | MVP scoping | "We'll get to MVP scope next — right now we need to know what's feasible before we scope what to build." |
 | Verdict | "Not yet — MVP scoping still needs to happen. Then decide." |
@@ -85,7 +85,7 @@ Don't assume compliance is simple. "We'll just handle it" is a red flag. If the 
 
 When all four sub-concerns have been explored:
 
-> "Here's the feasibility picture: [summary — technical complexity, operational burden, cost structure, legal flags]. When you're ready, `/idea-mvp` will scope the smallest concrete thing you could ship to test the core hypothesis. Want to dig deeper, or move on?"
+> "Here's the feasibility picture: [summary — technical complexity, operational burden, cost structure, legal flags]. When you're ready, `/idea-incubator:idea-mvp` will scope the smallest concrete thing you could ship to test the core hypothesis. Want to dig deeper, or move on?"
 
 **Never auto-transition.**
 

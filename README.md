@@ -8,23 +8,44 @@ A set of Claude Code skills that push a business idea from raw thought to a defe
 
 This is not a brainstorming pad. The single job is to produce a decision you can defend.
 
+## Install
+
+In a Claude Code session, run:
+
+```
+/plugin marketplace add mbrunetto/idea-incubator
+/plugin install idea-incubator@mbrunetto-idea-incubator
+```
+
+Or clone locally and add as a local marketplace:
+
+```bash
+git clone https://github.com/mbrunetto/idea-incubator.git
+```
+
+Then in Claude Code:
+
+```
+/plugin marketplace add ./path/to/idea-incubator
+/plugin install idea-incubator@idea-incubator
+```
+
 ## Quick start
 
-1. Install as a Claude Code skill source (add this directory to your skill paths).
-2. Start a conversation and invoke `/idea-start`.
-3. Follow the workflow. The skills will push you.
+1. Start a conversation and invoke `/idea-incubator:idea-start`.
+2. Follow the workflow. The skills will push you.
 
 ## Workflow
 
 ````
-/idea-start        → Router. Shows your ideas, points you to the right phase.
-/idea-concept      → What's the idea? Who's it for? Why now?
-/idea-validate     → Is the problem real? Who else solves it?
-/idea-gtm          → How do customers find this? At what cost?
-/idea-feasibility  → Can we build, run, afford, and legally operate this?
-/idea-mvp          → What's the smallest thing we ship to test the hypothesis?
-/idea-decide       → Go, park, or kill. With reasoning.
-/idea-recap        → Read-only summary of any idea at any point.
+/idea-incubator:idea-start        → Router. Shows your ideas, points you to the right phase.
+/idea-incubator:idea-concept      → What's the idea? Who's it for? Why now?
+/idea-incubator:idea-validate     → Is the problem real? Who else solves it?
+/idea-incubator:idea-gtm          → How do customers find this? At what cost?
+/idea-incubator:idea-feasibility  → Can we build, run, afford, and legally operate this?
+/idea-incubator:idea-mvp          → What's the smallest thing we ship to test the hypothesis?
+/idea-incubator:idea-decide       → Go, park, or kill. With reasoning.
+/idea-incubator:idea-recap        → Read-only summary of any idea at any point.
 ````
 
 ## What to expect

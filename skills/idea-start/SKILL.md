@@ -32,14 +32,14 @@ Then: "Which idea do you want to work on, or do you have a new one?"
 
 ### If no ideas exist
 
-> This repo is empty — no ideas yet. When you're ready, tell me your idea and I'll invoke `/idea-concept` to start capturing it.
+> This repo is empty — no ideas yet. When you're ready, tell me your idea and I'll invoke `/idea-incubator:idea-concept` to start capturing it.
 
 ### If the user mentions a specific idea
 
 Read all existing artifacts for that idea. Determine the next phase:
 - If the latest complete phase has `verdict: killer` and no override recorded on the next phase → warn about the killer verdict and ask if they want to override or revisit.
 - If a phase is `in-progress` → route to that phase's skill to continue.
-- If all phases through decide are complete → the idea has a verdict. Suggest `/idea-recap` for a summary.
+- If all phases through decide are complete → the idea has a verdict. Suggest `/idea-incubator:idea-recap` for a summary.
 - Otherwise → route to the next incomplete phase.
 
 ## The Workflow Brief
@@ -48,12 +48,12 @@ When a user is new or asks how this works, explain:
 
 > Your idea will move through 6 phases. Each phase has its own skill, its own job, and it writes a persistent artifact.
 >
-> **concept** — What's the idea, who's it for, why now?
-> **validate** — Is the problem real? Who has it? What do they do today?
-> **gtm** — How do customers find this? What does acquisition cost?
-> **feasibility** — Can we build, run, afford, and legally operate this?
-> **mvp** — What's the smallest concrete thing we ship to test the hypothesis?
-> **decide** — Go, park, or kill. With full reasoning.
+> **idea-concept** — What's the idea, who's it for, why now?
+> **idea-validate** — Is the problem real? Who has it? What do they do today?
+> **idea-gtm** — How do customers find this? What does acquisition cost?
+> **idea-feasibility** — Can we build, run, afford, and legally operate this?
+> **idea-mvp** — What's the smallest concrete thing we ship to test the hypothesis?
+> **idea-decide** — Go, park, or kill. With full reasoning.
 >
 > Fair warning: these skills default to devil's advocate. They will refuse vague answers, demand evidence, and attack lazy reasoning. If that sounds uncomfortable, it's working. A well-reasoned "kill" is more valuable than a hand-wavy "go."
 
@@ -61,16 +61,16 @@ When a user is new or asks how this works, explain:
 
 | Signal | Route to |
 |--------|----------|
-| "I have an idea for...", new idea, no existing folder | `/idea-concept` |
-| Existing idea, concept complete, no VALIDATION.md | `/idea-validate <slug>` |
-| Existing idea, validation complete, no GTM.md | `/idea-gtm <slug>` |
-| Existing idea, gtm complete, no FEASIBILITY.md | `/idea-feasibility <slug>` |
-| Existing idea, feasibility complete, no MVP.md | `/idea-mvp <slug>` |
-| Existing idea, mvp complete, no DECISION.md | `/idea-decide <slug>` |
-| Existing idea, all phases complete | `/idea-recap <slug>` |
+| "I have an idea for...", new idea, no existing folder | `/idea-incubator:idea-concept` |
+| Existing idea, concept complete, no VALIDATION.md | `/idea-incubator:idea-validate <slug>` |
+| Existing idea, validation complete, no GTM.md | `/idea-incubator:idea-gtm <slug>` |
+| Existing idea, gtm complete, no FEASIBILITY.md | `/idea-incubator:idea-feasibility <slug>` |
+| Existing idea, feasibility complete, no MVP.md | `/idea-incubator:idea-mvp <slug>` |
+| Existing idea, mvp complete, no DECISION.md | `/idea-incubator:idea-decide <slug>` |
+| Existing idea, all phases complete | `/idea-incubator:idea-recap <slug>` |
 | Existing idea, a phase is in-progress | Route to that phase's skill |
 | "What ideas do I have?" / general overview | Show the table above |
-| "Summarize <idea>" | `/idea-recap <slug>` |
+| "Summarize <idea>" | `/idea-incubator:idea-recap <slug>` |
 
 ## Rules
 
