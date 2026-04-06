@@ -13,14 +13,14 @@ This is not a brainstorming pad. The single job is to produce a decision you can
 In a Claude Code session, run:
 
 ```
-/plugin marketplace add mbrunetto/idea-incubator
+/plugin marketplace add brunoteo/idea-incubator
 /plugin install idea-incubator@mbrunetto-idea-incubator
 ```
 
 Or clone locally and add as a local marketplace:
 
 ```bash
-git clone https://github.com/mbrunetto/idea-incubator.git
+git clone https://github.com/brunoteo/idea-incubator.git
 ```
 
 Then in Claude Code:
