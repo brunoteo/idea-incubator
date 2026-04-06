@@ -75,7 +75,7 @@ This applies even if the user initiates it. Gently redirect every time.
 
 When all four dimensions (problem, user, why-now, differentiation) are sharp — or the user has explicitly acknowledged gaps:
 
-> "The concept is taking shape. Here's where we landed: [brief summary of the four dimensions]. When you're ready, `/idea-validate` will interrogate whether this problem is real and map who else is solving it. Want to keep refining, or move on?"
+> "The concept is taking shape. Here's where we landed: [brief summary of the four dimensions]. When you're ready, `/idea-incubator:idea-validate` will interrogate whether this problem is real and map who else is solving it. Want to keep refining, or move on?"
 
 **Never auto-transition.** Always wait for the user's go-ahead.
 

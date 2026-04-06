@@ -82,7 +82,7 @@ How long to build, how long to run the test. Total calendar time from start to v
 
 When all 7 elements are concrete:
 
-> "The MVP is scoped: [one-line summary — what, for whom, tested how, in what timebox]. When you're ready, `/idea-decide` will weigh everything — concept, validation, GTM, feasibility, and this MVP scope — to reach a verdict. Want to refine the MVP, or move to the decision?"
+> "The MVP is scoped: [one-line summary — what, for whom, tested how, in what timebox]. When you're ready, `/idea-incubator:idea-decide` will weigh everything — concept, validation, GTM, feasibility, and this MVP scope — to reach a verdict. Want to refine the MVP, or move to the decision?"
 
 **Never auto-transition.**
 

@@ -90,7 +90,7 @@ If marketing costs make unit economics negative, surface this as a critical tens
 | Drift toward | Response |
 |---|---|
 | Product features, tech stack | "We're on distribution right now. Features come from feasibility + MVP. How do users find this?" |
-| Revisiting problem validation | "The problem's mapped in VALIDATION.md. If you want to revise, rerun `/idea-validate`. Here we're focused on reaching the people who have it." |
+| Revisiting problem validation | "The problem's mapped in VALIDATION.md. If you want to revise, rerun `/idea-incubator:idea-validate`. Here we're focused on reaching the people who have it." |
 | Pricing deep-dive | "Pricing matters for CAC/LTV math, but full pricing analysis is feasibility territory. Keep it rough here." |
 | Verdict | "Not yet — feasibility and MVP still need to happen before decide." |
 
@@ -98,7 +98,7 @@ If marketing costs make unit economics negative, surface this as a critical tens
 
 When channels, positioning, costs, and sequence are explored:
 
-> "Here's the GTM picture: [summary — best channels, cold-start approach, CAC reality, positioning, moat status]. When you're ready, `/idea-feasibility` will evaluate whether we can build, run, afford, and legally operate this at the scale GTM implies. Want to dig deeper, or move on?"
+> "Here's the GTM picture: [summary — best channels, cold-start approach, CAC reality, positioning, moat status]. When you're ready, `/idea-incubator:idea-feasibility` will evaluate whether we can build, run, afford, and legally operate this at the scale GTM implies. Want to dig deeper, or move on?"
 
 **Never auto-transition.**
 

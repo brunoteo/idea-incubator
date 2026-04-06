@@ -78,7 +78,7 @@ Then proceed. If the user says "just do it" without a reason, refuse again. Over
 When a skill notices a significant gap in an earlier phase's work during the conversation:
 
 1. Write to the current artifact's frontmatter: `gap_in: <phase>`, `gap_note: "<short description>"`
-2. Tell the user: "I'm noting a gap in <phase> — <summary>. You can rerun `/idea-<phase>` to address it, or leave it. idea-decide will see this note."
+2. Tell the user: "I'm noting a gap in <phase> — <summary>. You can rerun `/idea-incubator:idea-<phase>` to address it, or leave it. idea-decide will see this note."
 3. **Proceed regardless.** This is advisory, not blocking.
 
 ### C. Hard gate on idea-decide (blocking, no override)

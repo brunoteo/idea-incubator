@@ -15,7 +15,7 @@ Interrogate whether the problem is real, who has it, how painful it is, and what
 3. Set the working directory to `ideas/<idea-slug>/`.
 4. **Gate check:**
    - Read `CONCEPT.md`. If missing or `status` is not `complete`, refuse:
-     > "Validation needs a solid concept. Run `/idea-concept <slug>` first."
+     > "Validation needs a solid concept. Run `/idea-incubator:idea-concept <slug>` first."
    - If `CONCEPT.md` has `verdict: killer`, apply the killer-verdict gate per CONVENTIONS.md.
 5. Check if `VALIDATION.md` exists — if so, read it and pick up where things left off.
 6. Read `CONCEPT.md` to ground the conversation — you need the problem statement, target user, and differentiation claim.
@@ -79,7 +79,7 @@ Track the ratio. If most of the problem-reality case rests on assumptions, `evid
 
 When problem reality and alternatives landscape have been explored:
 
-> "Here's what validation found: [summary — problem reality, evidence strength, key alternatives, biggest gaps]. When you're ready, `/idea-gtm` will pressure-test how you'd actually reach these people and at what cost. Want to dig deeper here, or move on?"
+> "Here's what validation found: [summary — problem reality, evidence strength, key alternatives, biggest gaps]. When you're ready, `/idea-incubator:idea-gtm` will pressure-test how you'd actually reach these people and at what cost. Want to dig deeper here, or move on?"
 
 **Never auto-transition.**
 
