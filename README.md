@@ -14,7 +14,7 @@ In a Claude Code session, run:
 
 ```
 /plugin marketplace add brunoteo/idea-incubator
-/plugin install idea-incubator@mbrunetto-idea-incubator
+/plugin install idea-incubator@brunoteo-idea-incubator
 ```
 
 Or clone locally and add as a local marketplace:
