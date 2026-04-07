@@ -87,6 +87,7 @@ This is the raw material. Present it honestly — don't spin it.
 - Every weak evidence assessment.
 - Every unresolved gap.
 - Every key risk.
+- **Moat assessment:** Is this defensible over time? (Network effects, data, switching costs, brand, community, regulatory advantage.) If there's no moat, say so — a viable business with no defensibility is a different risk profile than one with compounding advantages. Draw on GTM's channel competition and feasibility's technical analysis to assess.
 - **Do NOT soften this.** The user needs the full picture. If the idea should die, say so clearly.
 
 ### Step 3: Weigh overrides and gaps

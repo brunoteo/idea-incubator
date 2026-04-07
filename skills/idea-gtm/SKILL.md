@@ -80,12 +80,18 @@ Matters most for marketplaces, platforms, and network-effect businesses. But pro
 - Single-player mode — is the product useful even without network effects?
 - Existing communities or aggregations to tap into?
 
-### Positioning and moat
+### Positioning
 Using VALIDATION.md's alternatives landscape:
 - Against the direct competitors: what's the positioning? (Not "we're better" — better how, for whom, in what context?)
 - Against substitutes (spreadsheets, manual processes): what makes switching worth the effort?
 - Against inaction: what triggers someone to finally solve this problem?
-- **Moat** — what makes this defensible over time? (Network effects, data, switching costs, brand, community, regulatory advantage.) If there's no moat, say so — that's a risk for decide.
+
+### Competitive landscape in channels
+Where are competitors strong in distribution, and where are the gaps?
+- If competitors dominate SEO for your keywords, what's the alternative?
+- Are there underserved channels where your positioning gives you an edge?
+- Can you differentiate on distribution, not just product? (e.g., a community-first approach in a space where competitors only do paid ads)
+- Which channels are *winnable* given who else is already competing for attention there?
 
 ### Go-to-market sequence
 Not just "which channels" but "in what order and why":
@@ -130,7 +136,7 @@ When you hear any of these, respond with the pushback directly in prose. Do not 
 
 When channels, positioning, costs, and sequence are explored:
 
-> "Here's the GTM picture: [summary — best channels, cold-start approach, CAC reality, positioning, moat status]. When you're ready, `/idea-incubator:idea-feasibility` will evaluate whether we can build, run, afford, and legally operate this at the scale GTM implies. Want to dig deeper, or move on?"
+> "Here's the GTM picture: [summary — best channels, cold-start approach, CAC reality, positioning, channel competition]. When you're ready, `/idea-incubator:idea-feasibility` will evaluate whether we can build, run, afford, and legally operate this at the scale GTM implies. Want to dig deeper, or move on?"
 
 **Never auto-transition.**
 
@@ -162,8 +168,11 @@ gap_note: null
 ## Cold Start Plan
 [If applicable: which side first, minimum viable supply/demand, concierge approach]
 
-## Positioning and Moat
-[Against alternatives from VALIDATION.md. Moat assessment — or explicit "no moat" if none.]
+## Positioning
+[Against alternatives from VALIDATION.md — how, for whom, in what context]
+
+## Competitive Landscape in Channels
+[Where competitors are strong in distribution, where gaps exist, which channels are winnable]
 
 ## Go-to-Market Sequence
 [Phase 0: validation → Phase 1: first users → Phase 2: growth. Transition signals.]
@@ -182,6 +191,6 @@ Adapt to what emerged.
 - `verdict: proceed-with-caution` — channels exist but cold-start is unresolved or CAC is uncertain.
 - `verdict: killer` — CAC can't fit any plausible LTV, or no viable channel identified.
 - `evidence_strength` based on how much channel/cost analysis rests on data vs guesses.
-- `key_risks` from cold start, moat gaps, cost uncertainties.
+- `key_risks` from cold start, channel competition, cost uncertainties.
 
 **Save after each significant exchange.**
