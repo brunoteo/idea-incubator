@@ -25,9 +25,38 @@ Can we build, run, afford, and legally operate this at the scale GTM implies? Fo
 
 **Key framing:** Feasibility is judged *against the scale GTM implies*. "Can we build it?" isn't abstract — it's "can we build it to serve the volume and channels GTM describes, at a cost that works?"
 
+## Transition Graph
+
+```dot
+digraph feasibility {
+    entry [label="Phase starts" shape=ellipse];
+    gate [label="Gate check:\nCONCEPT.md + VALIDATION.md\n+ GTM.md complete?" shape=diamond];
+    explore [label="Explore:\ntechnical, operational,\nresource, legal"];
+    drift [label="Drift detected?" shape=diamond];
+    gap [label="Gap in GTM?" shape=diamond];
+    complete [label="Phase complete" shape=ellipse];
+    mvp [label="/idea-mvp" shape=box];
+    gtm [label="/idea-gtm\n(back-arrow)" shape=box];
+    prior [label="Missing prior phase" shape=box];
+
+    entry -> gate;
+    gate -> explore [label="pass"];
+    gate -> prior [label="missing / incomplete"];
+    explore -> drift [label="topic drifts"];
+    drift -> explore [label="redirect (problem/distribution/mvp/verdict)"];
+    explore -> gap [label="feasibility reveals GTM gap"];
+    gap -> explore [label="note gap, continue"];
+    gap -> gtm [label="back-arrow (advisory)" style=dashed];
+    explore -> complete [label="all 4 sub-concerns explored"];
+    complete -> mvp [label="proceed"];
+    complete -> mvp [label="proceed-with-caution" style=dashed];
+    complete -> mvp [label="killer (override required)" style=dotted];
+}
+```
+
 ## How to Explore
 
-Weave across all four sub-concerns. Don't do them sequentially — they interact. A technical choice affects resource costs; a legal constraint limits operational approach; resource limits shrink what's technically possible.
+**Use `AskUserQuestion` to drive the conversation.** Weave across all four sub-concerns — don't do them sequentially. They interact: a technical choice affects resource costs; a legal constraint limits operational approach; resource limits shrink what's technically possible. Follow whatever thread the user's answer opens.
 
 ### 1. Technical Feasibility
 - What are the core technical challenges? (Not "what's the tech stack" — what's *hard* about building this?)
@@ -62,6 +91,8 @@ Don't assume compliance is simple. "We'll just handle it" is a red flag. If the 
 
 ## Red Flags
 
+When you hear any of these, respond with the pushback directly in prose. Do not accept the answer and continue.
+
 | User says | Skill responds |
 |---|---|
 | "We'll figure out the tech later" | "The tech determines whether this is a weekend project or a 6-month build. What's the hardest technical problem?" |
@@ -71,6 +102,7 @@ Don't assume compliance is simple. "We'll just handle it" is a red flag. If the 
 | "We'll scale when we need to" | "GTM says you need to handle [X users/transactions]. Can the initial build handle that, or is a rewrite baked in?" |
 | "It'll cost about $X" (vague) | "Break it down. Infrastructure? Salaries? Services? Vague cost estimates hide surprises." |
 | "We can outsource the whole thing" | "Outsource to whom? At what quality? Who manages the relationship? Outsourcing has coordination costs." |
+| User can't answer a question | Don't fill in guesses. Flag it as a key risk and move on. Unknown feasibility dimensions are critical inputs for decide. |
 
 ## Boundary Enforcement
 

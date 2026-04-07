@@ -57,6 +57,50 @@ When a user is new or asks how this works, explain:
 >
 > Fair warning: these skills default to devil's advocate. They will refuse vague answers, demand evidence, and attack lazy reasoning. If that sounds uncomfortable, it's working. A well-reasoned "kill" is more valuable than a hand-wavy "go."
 
+```dot
+digraph idea_flow {
+    rankdir=LR;
+    node [shape=box];
+
+    start [label="Conversation starts" shape=ellipse];
+    check [label="Idea exists?" shape=diamond];
+    concept [label="/idea-concept\nPhase 1"];
+    validate [label="/idea-validate\nPhase 2"];
+    gtm [label="/idea-gtm\nPhase 3"];
+    feasibility [label="/idea-feasibility\nPhase 4"];
+    mvp [label="/idea-mvp\nPhase 5"];
+    decide [label="/idea-decide\nPhase 6"];
+    done [label="Verdict reached" shape=ellipse];
+
+    start -> check;
+    check -> concept [label="new idea"];
+    check -> concept [label="status: in-progress (concept)"];
+    check -> validate [label="concept complete"];
+    check -> gtm [label="validation complete"];
+    check -> feasibility [label="gtm complete"];
+    check -> mvp [label="feasibility complete"];
+    check -> decide [label="mvp complete"];
+    check -> done [label="decision complete"];
+
+    concept -> validate [label="proceed / proceed-with-caution"];
+    concept -> validate [label="killer (override required)" style=dotted];
+    validate -> gtm [label="proceed / proceed-with-caution"];
+    validate -> gtm [label="killer (override required)" style=dotted];
+    gtm -> feasibility [label="proceed / proceed-with-caution"];
+    gtm -> feasibility [label="killer (override required)" style=dotted];
+    feasibility -> mvp [label="proceed / proceed-with-caution"];
+    feasibility -> mvp [label="killer (override required)" style=dotted];
+    mvp -> decide [label="proceed"];
+    decide -> done [label="go / park / kill"];
+
+    // Back-arrows (advisory)
+    validate -> concept [label="gap found" style=dashed];
+    gtm -> validate [label="gap found" style=dashed];
+    feasibility -> gtm [label="gap found" style=dashed];
+    mvp -> feasibility [label="gap found" style=dashed];
+}
+```
+
 ## Routing Table
 
 | Signal | Route to |
