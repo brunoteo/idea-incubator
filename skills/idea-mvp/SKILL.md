@@ -24,9 +24,36 @@ Given everything known, what's the smallest concrete thing we ship to test the c
    - The best channel and cold-start approach (GTM.md)
    - The technical complexity, cost structure, and constraints (FEASIBILITY.md)
 
+## Transition Graph
+
+```dot
+digraph mvp {
+    entry [label="Phase starts" shape=ellipse];
+    gate [label="Gate check:\nall 4 priors complete?" shape=diamond];
+    explore [label="Explore:\n7 MVP elements"];
+    drift [label="Drift detected?" shape=diamond];
+    gap [label="Gap in feasibility?" shape=diamond];
+    complete [label="Phase complete" shape=ellipse];
+    decide [label="/idea-decide" shape=box];
+    feasibility [label="/idea-feasibility\n(back-arrow)" shape=box];
+    prior [label="Missing prior phase" shape=box];
+
+    entry -> gate;
+    gate -> explore [label="pass"];
+    gate -> prior [label="missing / incomplete"];
+    explore -> drift [label="topic drifts"];
+    drift -> explore [label="redirect (roadmap/feasibility/distribution/verdict)"];
+    explore -> gap [label="MVP scope reveals feasibility gap"];
+    gap -> explore [label="note gap, continue"];
+    gap -> feasibility [label="back-arrow (advisory)" style=dashed];
+    explore -> complete [label="all 7 elements concrete"];
+    complete -> decide [label="proceed"];
+}
+```
+
 ## How to Explore
 
-The MVP must nail 7 specific elements. Drive the conversation until each is concrete. No vagueness allowed.
+**Use `AskUserQuestion` to drive the conversation.** The MVP must nail 7 specific elements. Drive the conversation until each is concrete. No vagueness allowed.
 
 ### 1. Core User
 Who is the single most important user for the MVP? Not the full target market — the one person or segment that, if they use it and love it, validates the hypothesis. Reference VALIDATION.md's pain-severity ranking.
@@ -59,6 +86,8 @@ How long to build, how long to run the test. Total calendar time from start to v
 
 ## Red Flags
 
+When you hear any of these, respond with the pushback directly in prose. Do not accept the answer and continue.
+
 | User says | Skill responds |
 |---|---|
 | "We need to build the whole platform first" | "No. What's the one thing that tests whether people care? Everything else is premature." |
@@ -68,6 +97,7 @@ How long to build, how long to run the test. Total calendar time from start to v
 | "Let's launch and see what happens" (no kill threshold) | "See what, specifically? What result would make you stop? Set that now — after launch, you'll rationalize anything." |
 | "We need 6 months" | "That's not an MVP, that's a product. What could you ship in 4 weeks that tests the core assumption?" |
 | "Everything is essential" | "If everything is essential, the hypothesis is too broad. What's the single riskiest assumption? Test that." |
+| User can't answer a question | Don't fill in guesses. If they can't state the core hypothesis or success metric, that's a signal the prior phases may have been too vague. Note the gap and probe a different element. |
 
 ## Boundary Enforcement
 

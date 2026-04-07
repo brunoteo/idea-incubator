@@ -109,7 +109,11 @@ Tone is the product differentiation. Every thinking skill follows these rules:
 
 ## Red Flags Pattern
 
-Every thinking skill (concept through mvp) includes a **Red Flags** table in its SKILL.md. The table maps user rationalizations to pushback responses. This is the tone contract in executable form.
+Every thinking skill (concept through decide) includes a **Red Flags** table in its SKILL.md. The table maps user rationalizations to specific pushback responses delivered via `AskUserQuestion`. This is the tone contract in executable form — not a passive list but procedural instructions for how to respond in the dialogue.
+
+**When a user's answer matches a red flag:** respond with the pushback from the table directly in prose, then follow up with `AskUserQuestion` to probe for the sharper answer the pushback demands. Do not accept the original answer and move on.
+
+**When the user can't answer:** don't fill in guesses. Record the gap (as an open question, assumption marker, or key risk depending on the phase) and move to the next thread. A missing answer is a signal, not a failure.
 
 **Universal red flags** (apply to all skills):
 
@@ -132,11 +136,15 @@ Real thinking doesn't fit predefined H2 sections. The sections exist to ensure t
 
 ## Dialogue UX
 
-**Default: prose Q&A.** Skills ask sharp open-ended questions in prose, demand evidence, challenge weak answers.
+**Use `AskUserQuestion` to drive the conversation.** Every thinking phase is a dialogue, not a monologue. Use the `AskUserQuestion` tool to explore the idea with the user — probe assumptions, surface unknowns, and let their answers guide where the conversation goes next. Don't fill in blanks yourself; ask.
 
-**Exception:** When the user faces a genuine discrete choice (e.g., "which of these three target users?" or "B2B or B2C?"), skills use `AskUserQuestion` with 2-4 options.
+**Follow whatever thread emerges naturally.** Adapt the order and depth to the idea — there is no rigid checklist. The "ground to cover" sections in each skill are areas to eventually hit, not a sequence to follow.
 
-`AskUserQuestion` is for choice points, not for driving the entire conversation.
+**Challenge weak answers.** If the user gives a vague or hand-wavy response, don't accept it and move on. Name the vagueness and ask for a sharper cut. Use the Red Flags tables — when a user says something that matches a red flag, respond with the specific pushback from the table via `AskUserQuestion`.
+
+**Do NOT force answers.** If the user genuinely can't answer a question, that's a signal worth noting in the artifact — not a blank to fill with guesses. Record it as an open question and move to the next thread.
+
+**Exception for discrete choices:** When the user faces a genuine discrete choice (e.g., "which of these three target users?" or "B2B or B2C?"), use `AskUserQuestion` with 2-4 pre-defined options instead of an open-ended question.
 
 ## Idea Slug Convention
 
