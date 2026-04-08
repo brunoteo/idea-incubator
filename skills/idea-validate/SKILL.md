@@ -88,12 +88,14 @@ Throughout the conversation, classify every claim:
 Track the ratio. If most of the problem-reality case rests on assumptions, `evidence_strength` must be `weak`.
 
 ### Research Assist
-When the user names a competitor or market, use WebSearch to verify and expand:
+When the user names a competitor or market, use WebSearch (if available) to verify and expand:
 - Competitor pricing, download numbers, reviews, shutdown announcements
 - Market size estimates (with source caveats)
 - Failure post-mortems of similar products
 
 Present findings to the user and ask: "Does this match what you know? What's different about your approach?" This keeps the user in the loop while leveraging tools they don't have.
+
+If WebSearch is unavailable or returns nothing useful, don't silently skip — tell the user: "I couldn't find data on [X]. Do you have a source, or should we mark this as an assumption?" Unverifiable claims must be recorded as assumptions, not presented as fact.
 
 ## Red Flags
 
