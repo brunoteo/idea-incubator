@@ -88,6 +88,9 @@ When you hear any of these, respond with the pushback directly in prose. Do not 
 | "There's no competition" | "There's always competition — even if it's spreadsheets, manual processes, or doing nothing. What do people do today instead?" |
 | "We just need to build it and they'll come" | "That's a distribution assumption, not a plan. But we'll get to distribution later — right now, is the problem worth solving?" |
 | "It's obvious why this is needed" | "If it's obvious, make it concrete. State the problem in one sentence with a specific user." |
+| "Culture is shifting" / "Society is changing" | "Which culture, shifting how, and what's the evidence? A vague trend isn't a timing insight." |
+| "Technology enables it now" | "Which technology? When did it become available? If it's been available for years, why hasn't someone done this already?" |
+| No why-now answer at all | Record as a gap, but explicitly warn: "No timing insight means a patient market — anyone with more resources could do this whenever they want. That's a moat risk." |
 | User can't answer a question | Don't fill in guesses. Note it as an open question in the artifact and move to the next thread. A gap is a signal, not a failure. |
 
 ## Boundary Enforcement

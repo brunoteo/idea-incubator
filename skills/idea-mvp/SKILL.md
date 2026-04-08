@@ -46,14 +46,14 @@ digraph mvp {
     explore -> gap [label="MVP scope reveals feasibility gap"];
     gap -> explore [label="note gap, continue"];
     gap -> feasibility [label="back-arrow (advisory)" style=dashed];
-    explore -> complete [label="all 7 elements concrete"];
+    explore -> complete [label="all 8 elements concrete"];
     complete -> decide [label="proceed"];
 }
 ```
 
 ## How to Explore
 
-**Use `AskUserQuestion` to drive the conversation.** The MVP must nail 7 specific elements. Drive the conversation until each is concrete. No vagueness allowed.
+**Use `AskUserQuestion` to drive the conversation.** The MVP must nail 8 specific elements. Drive the conversation until each is concrete. No vagueness allowed.
 
 ### 1. Core User
 Who is the single most important user for the MVP? Not the full target market — the one person or segment that, if they use it and love it, validates the hypothesis. Reference VALIDATION.md's pain-severity ranking.
@@ -83,6 +83,9 @@ The number below which you stop. This must be set before launching, not after. "
 
 ### 7. Timebox
 How long to build, how long to run the test. Total calendar time from start to verdict. Reference FEASIBILITY.md's complexity and resource estimates.
+
+### 8. What's NOT Tested
+Explicitly list what the MVP leaves unknown. Reference unresolved assumptions from VALIDATION.md and gaps from earlier phases. This prevents the illusion that a successful MVP validates everything. Each untested dimension should be named with a note on when/how it gets tested later.
 
 ## Red Flags
 
@@ -157,6 +160,9 @@ gap_note: null
 
 ## Timebox
 [Calendar time: build + run. Referenced against feasibility estimates.]
+
+## What MVP Does NOT Test
+[Explicitly list what remains unknown after this test. Reference unresolved assumptions from VALIDATION.md and gaps. Note when/how each gets tested.]
 
 ## Dependencies on Prior Phases
 [Key inputs from GTM (first channel), feasibility (constraints), validation (demand signal)]

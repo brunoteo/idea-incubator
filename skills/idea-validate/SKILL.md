@@ -59,6 +59,11 @@ digraph validate {
 - How painful is it? "Mildly annoying" and "costs me $10k/year" are different problems.
 - If no direct evidence exists, what would evidence look like? How could you get it cheaply?
 
+### Direct User Signal
+- Have you talked to anyone who has this problem? What did they say?
+- If not: what's the cheapest way to talk to 5 people this week?
+- Proxy evidence (competitor revenue, app downloads) validates the *category*, not *your specific angle*. Name that distinction explicitly in the artifact.
+
 ### Who Has It
 - Which specific people or organizations?
 - How many of them are there? (Order of magnitude, not precision.)
@@ -81,6 +86,14 @@ Throughout the conversation, classify every claim:
 - **Assumption:** user believes it but can't source it. Record as `**Assumption:** <claim>`.
 
 Track the ratio. If most of the problem-reality case rests on assumptions, `evidence_strength` must be `weak`.
+
+### Research Assist
+When the user names a competitor or market, use WebSearch to verify and expand:
+- Competitor pricing, download numbers, reviews, shutdown announcements
+- Market size estimates (with source caveats)
+- Failure post-mortems of similar products
+
+Present findings to the user and ask: "Does this match what you know? What's different about your approach?" This keeps the user in the loop while leveraging tools they don't have.
 
 ## Red Flags
 

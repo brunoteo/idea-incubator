@@ -121,6 +121,8 @@ When you hear any of these, respond with the pushback directly in prose. Do not 
 | "Build it and they'll come" | "Nobody comes. You go get them. Through which specific channel, at what cost?" |
 | "We'll partner with X" | "Have you talked to X? What's in it for them? Partnerships require leverage — what's yours?" |
 | "We don't have competitors" | "VALIDATION.md mapped alternatives. People doing nothing is your competitor. Why would they change?" |
+| "We'll post on TikTok/Instagram" | "What evidence do you have that your target user discovers apps through these channels? Show me an example of a similar product that grew this way." |
+| "Organic social is free" | "Organic social costs your time and has zero guaranteed reach. What's your plan when 20 posts get 50 views each?" |
 | User can't answer a question | Don't fill in guesses. Note it as an open question and move on. A gap in distribution knowledge is a key risk for decide. |
 
 ## Boundary Enforcement
