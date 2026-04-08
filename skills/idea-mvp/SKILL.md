@@ -115,7 +115,7 @@ When you hear any of these, respond with the pushback directly in prose. Do not 
 
 ## Phase Transition
 
-When all 7 elements are concrete:
+When all 8 elements are concrete:
 
 > "The MVP is scoped: [one-line summary — what, for whom, tested how, in what timebox]. When you're ready, `/idea-incubator:idea-decide` will weigh everything — concept, validation, GTM, feasibility, and this MVP scope — to reach a verdict. Want to refine the MVP, or move to the decision?"
 
