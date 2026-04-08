@@ -50,7 +50,16 @@ Let the user talk. Use `AskUserQuestion` to draw out the full picture without ju
 
 Ask one question at a time. Do NOT challenge anything yet. Do NOT organize into sections. The goal is to get the unfiltered thought out of the user's head.
 
-When the user seems done: "OK, I've got the raw dump. Now let me push on it."
+### When to transition to Pass 2
+
+Move to Pass 2 when any of these happen:
+- **Explicit signal:** The user says they're done ("that's it", "that's the idea", "I think that covers it").
+- **Coverage signal:** The user has touched at least 2 of the 4 dimensions (problem, user, why-now, differentiation) even loosely — there's enough raw material to start sharpening. Pass 2 fills the gaps; Pass 1 doesn't need to be exhaustive.
+- **Repetition signal:** The user is circling back to things they already said.
+
+Err toward moving forward. A lingering dump phase ("anything else?") is worse than transitioning with gaps — that's what Pass 2 is for.
+
+Transition line: "OK, I've got the raw dump. Now let me push on it."
 
 ## Pass 2 — Sharpen
 
