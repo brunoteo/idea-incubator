@@ -160,11 +160,22 @@ Real thinking doesn't fit predefined H2 sections. The sections exist to ensure t
 
 **Follow whatever thread emerges naturally.** Adapt the order and depth to the idea — there is no rigid checklist. The "ground to cover" sections in each skill are areas to eventually hit, not a sequence to follow.
 
+**Pacing rule:** After every user response, you may reflect back 1-2 sentences, then ask. If you find yourself writing a paragraph of analysis without asking the user something, stop — you're monologuing. The artifact captures analysis; the conversation surfaces the user's actual knowledge and assumptions.
+
 **Never accept vague answers.** If the user gives a vague or hand-wavy response, do not record it and move on. Name the vagueness and ask for a sharper cut. Use the Red Flags tables — when a user says something that matches a red flag, respond with the specific pushback from the table, then follow up with `AskUserQuestion`.
 
 **Never force answers.** If the user genuinely can't answer a question, that's a signal worth noting in the artifact — not a blank to fill with guesses. Record it as an open question and move to the next thread.
 
 **Exception for discrete choices:** When the user faces a genuine discrete choice (e.g., "which of these three target users?" or "B2B or B2C?"), use `AskUserQuestion` with 2-4 pre-defined options instead of an open-ended question.
+
+## Source Attribution
+
+When writing artifacts, distinguish between:
+- **User-stated:** claims the user made directly during the conversation
+- **Researched:** findings from web search, known data, or verifiable facts
+- **Inferred:** reasoning the skill constructed from available information
+
+This doesn't need to be per-sentence — but the Evidence vs Assumptions section should note the source type for key claims. This matters because user-contributed knowledge is real signal while skill-generated analysis is just reasoning.
 
 ## Idea Slug Convention
 
