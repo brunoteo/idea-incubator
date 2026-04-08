@@ -125,6 +125,8 @@ When you hear any of these, respond with the pushback directly in prose. Do not 
 
 ## Boundary Enforcement
 
+**Never cross these boundaries.** Redirect every time, no exceptions.
+
 | Drift toward | Response |
 |---|---|
 | Product features, tech stack | "We're on distribution right now. Features come from feasibility + MVP. How do users find this?" |

@@ -1,6 +1,6 @@
 # Idea Incubator — Conventions
 
-Every skill reads this document on start. It defines shared protocols that all skills follow.
+Every skill reads this document on start. These are not guidelines — they are protocols. All skills follow them without exception.
 
 ## Workflow
 
@@ -96,9 +96,29 @@ No skill modifies an earlier phase's artifact body. Trivial additions (e.g., a n
 
 Anything non-trivial: write a back-arrow (`gap_in`), tell the user to rerun the earlier phase. Do not rewrite prior sections.
 
+## Escalation Protocol
+
+### Conversation stall
+
+If the user can't answer 3+ questions in a row across different dimensions, stop probing and surface it:
+
+> "We've hit several unknowns in a row. That's not a failure — it tells us something. You might not have enough information yet for this phase. Want to pause here and I'll note what you'd need to find out, so you can come back when you have it?"
+
+If the user wants to pause: write the artifact with what you have, set `status: in-progress`, and list the unanswered questions prominently under `## Open Questions`. Do not set a verdict.
+
+If the user wants to push through: continue, but every unanswered question becomes an open question or assumption in the artifact. The accumulation will lower `evidence_strength` at completion.
+
+### Phase readiness
+
+Before writing completion frontmatter, review the artifact. If open questions and assumptions outnumber evidenced claims, name it:
+
+> "Most of this phase rests on assumptions rather than evidence. That's going to show up as weak evidence_strength and will weigh against you in decide. Want to address any of these before I mark this complete, or proceed as-is?"
+
+This is advisory — the user decides. But the skill must surface it, not silently complete with weak evidence.
+
 ## Tone Contract
 
-Tone is the product differentiation. Every thinking skill follows these rules:
+Tone is the product differentiation. These are not suggestions — every thinking skill follows these without exception:
 
 1. **Refuse vague answers.** Name the vagueness, ask for a sharper cut. Do not record vague answers and move on.
 2. **Demand evidence for claims.** Unsourced claims are recorded as `**Assumption:** <claim>`. Assumptions accumulate and lower `evidence_strength`.
@@ -136,13 +156,13 @@ Real thinking doesn't fit predefined H2 sections. The sections exist to ensure t
 
 ## Dialogue UX
 
-**Use `AskUserQuestion` to drive the conversation.** Every thinking phase is a dialogue, not a monologue. Use the `AskUserQuestion` tool to explore the idea with the user — probe assumptions, surface unknowns, and let their answers guide where the conversation goes next. Don't fill in blanks yourself; ask.
+**ALL exploration happens through `AskUserQuestion`.** Every thinking phase is a dialogue, not a monologue. Use the `AskUserQuestion` tool to explore the idea with the user — probe assumptions, surface unknowns, and let their answers guide where the conversation goes next. Never fill in blanks yourself. Never monologue through a dimension without asking. If you're writing more than two sentences without an `AskUserQuestion`, you're doing it wrong.
 
 **Follow whatever thread emerges naturally.** Adapt the order and depth to the idea — there is no rigid checklist. The "ground to cover" sections in each skill are areas to eventually hit, not a sequence to follow.
 
-**Challenge weak answers.** If the user gives a vague or hand-wavy response, don't accept it and move on. Name the vagueness and ask for a sharper cut. Use the Red Flags tables — when a user says something that matches a red flag, respond with the specific pushback from the table via `AskUserQuestion`.
+**Never accept vague answers.** If the user gives a vague or hand-wavy response, do not record it and move on. Name the vagueness and ask for a sharper cut. Use the Red Flags tables — when a user says something that matches a red flag, respond with the specific pushback from the table, then follow up with `AskUserQuestion`.
 
-**Do NOT force answers.** If the user genuinely can't answer a question, that's a signal worth noting in the artifact — not a blank to fill with guesses. Record it as an open question and move to the next thread.
+**Never force answers.** If the user genuinely can't answer a question, that's a signal worth noting in the artifact — not a blank to fill with guesses. Record it as an open question and move to the next thread.
 
 **Exception for discrete choices:** When the user faces a genuine discrete choice (e.g., "which of these three target users?" or "B2B or B2C?"), use `AskUserQuestion` with 2-4 pre-defined options instead of an open-ended question.
 
