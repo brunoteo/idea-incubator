@@ -20,9 +20,38 @@ How does this idea reach its customers? The best product with no path to users i
 5. Check if `GTM.md` exists — if so, pick up where things left off.
 6. Read both priors to ground the conversation — you need the target user, their problem, and the alternatives landscape.
 
+## Transition Graph
+
+```dot
+digraph gtm {
+    entry [label="Phase starts" shape=ellipse];
+    gate [label="Gate check:\nCONCEPT.md + VALIDATION.md\ncomplete?" shape=diamond];
+    explore [label="Explore:\nchannels, positioning,\ncold start, costs"];
+    drift [label="Drift detected?" shape=diamond];
+    gap [label="Gap in validation?" shape=diamond];
+    complete [label="Phase complete" shape=ellipse];
+    feasibility [label="/idea-feasibility" shape=box];
+    validate [label="/idea-validate\n(back-arrow)" shape=box];
+    prior [label="Missing prior phase" shape=box];
+
+    entry -> gate;
+    gate -> explore [label="pass"];
+    gate -> prior [label="missing / incomplete"];
+    explore -> drift [label="topic drifts"];
+    drift -> explore [label="redirect (features/validation/pricing/verdict)"];
+    explore -> gap [label="distribution reveals validation gap"];
+    gap -> explore [label="note gap, continue"];
+    gap -> validate [label="back-arrow (advisory)" style=dashed];
+    explore -> complete [label="channels, positioning,\ncosts explored"];
+    complete -> feasibility [label="proceed"];
+    complete -> feasibility [label="proceed-with-caution" style=dashed];
+    complete -> feasibility [label="killer (override required)" style=dotted];
+}
+```
+
 ## How to Explore
 
-Flow naturally across these areas. Don't treat as a checklist — follow whatever thread matters most.
+**Use `AskUserQuestion` to drive the conversation.** Follow whatever thread the user's answer opens. The areas below are ground to cover, not a checklist to march through.
 
 ### Where are the users?
 Start from the target user in CONCEPT.md and the segments in VALIDATION.md, then go deeper:
@@ -51,12 +80,18 @@ Matters most for marketplaces, platforms, and network-effect businesses. But pro
 - Single-player mode — is the product useful even without network effects?
 - Existing communities or aggregations to tap into?
 
-### Positioning and moat
+### Positioning
 Using VALIDATION.md's alternatives landscape:
 - Against the direct competitors: what's the positioning? (Not "we're better" — better how, for whom, in what context?)
 - Against substitutes (spreadsheets, manual processes): what makes switching worth the effort?
 - Against inaction: what triggers someone to finally solve this problem?
-- **Moat** — what makes this defensible over time? (Network effects, data, switching costs, brand, community, regulatory advantage.) If there's no moat, say so — that's a risk for decide.
+
+### Competitive landscape in channels
+Where are competitors strong in distribution, and where are the gaps?
+- If competitors dominate SEO for your keywords, what's the alternative?
+- Are there underserved channels where your positioning gives you an edge?
+- Can you differentiate on distribution, not just product? (e.g., a community-first approach in a space where competitors only do paid ads)
+- Which channels are *winnable* given who else is already competing for attention there?
 
 ### Go-to-market sequence
 Not just "which channels" but "in what order and why":
@@ -75,6 +110,8 @@ If marketing costs make unit economics negative, surface this as a critical tens
 
 ## Red Flags
 
+When you hear any of these, respond with the pushback directly in prose. Do not accept the answer and continue.
+
 | User says | Skill responds |
 |---|---|
 | "We'll go viral" | "Virality is an outcome, not a strategy. What specific mechanic would cause one user to bring in others?" |
@@ -84,8 +121,11 @@ If marketing costs make unit economics negative, surface this as a critical tens
 | "Build it and they'll come" | "Nobody comes. You go get them. Through which specific channel, at what cost?" |
 | "We'll partner with X" | "Have you talked to X? What's in it for them? Partnerships require leverage — what's yours?" |
 | "We don't have competitors" | "VALIDATION.md mapped alternatives. People doing nothing is your competitor. Why would they change?" |
+| User can't answer a question | Don't fill in guesses. Note it as an open question and move on. A gap in distribution knowledge is a key risk for decide. |
 
 ## Boundary Enforcement
+
+**Never cross these boundaries.** Redirect every time, no exceptions.
 
 | Drift toward | Response |
 |---|---|
@@ -98,7 +138,7 @@ If marketing costs make unit economics negative, surface this as a critical tens
 
 When channels, positioning, costs, and sequence are explored:
 
-> "Here's the GTM picture: [summary — best channels, cold-start approach, CAC reality, positioning, moat status]. When you're ready, `/idea-incubator:idea-feasibility` will evaluate whether we can build, run, afford, and legally operate this at the scale GTM implies. Want to dig deeper, or move on?"
+> "Here's the GTM picture: [summary — best channels, cold-start approach, CAC reality, positioning, channel competition]. When you're ready, `/idea-incubator:idea-feasibility` will evaluate whether we can build, run, afford, and legally operate this at the scale GTM implies. Want to dig deeper, or move on?"
 
 **Never auto-transition.**
 
@@ -130,8 +170,11 @@ gap_note: null
 ## Cold Start Plan
 [If applicable: which side first, minimum viable supply/demand, concierge approach]
 
-## Positioning and Moat
-[Against alternatives from VALIDATION.md. Moat assessment — or explicit "no moat" if none.]
+## Positioning
+[Against alternatives from VALIDATION.md — how, for whom, in what context]
+
+## Competitive Landscape in Channels
+[Where competitors are strong in distribution, where gaps exist, which channels are winnable]
 
 ## Go-to-Market Sequence
 [Phase 0: validation → Phase 1: first users → Phase 2: growth. Transition signals.]
@@ -150,6 +193,6 @@ Adapt to what emerged.
 - `verdict: proceed-with-caution` — channels exist but cold-start is unresolved or CAC is uncertain.
 - `verdict: killer` — CAC can't fit any plausible LTV, or no viable channel identified.
 - `evidence_strength` based on how much channel/cost analysis rests on data vs guesses.
-- `key_risks` from cold start, moat gaps, cost uncertainties.
+- `key_risks` from cold start, channel competition, cost uncertainties.
 
 **Save after each significant exchange.**

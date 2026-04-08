@@ -17,27 +17,54 @@ Capture and refine an idea until the problem, target user, why-now, and differen
    - **Exists:** Read it. If `status: in-progress`, pick up where things left off. Do NOT start over. If `status: complete`, tell the user and suggest the next phase.
    - **Does not exist:** Create the directory if needed. Start fresh with Pass 1.
 
+## Transition Graph
+
+```dot
+digraph concept {
+    entry [label="Phase starts" shape=ellipse];
+    dump [label="Pass 1:\nFree dump"];
+    sharpen [label="Pass 2:\nSharpen 4 dimensions"];
+    drift [label="Drift detected?" shape=diamond];
+    complete [label="Phase complete" shape=ellipse];
+    validate [label="/idea-validate" shape=box];
+
+    entry -> dump;
+    dump -> sharpen [label="user done dumping"];
+    sharpen -> drift [label="topic drifts"];
+    drift -> sharpen [label="still concept territory"];
+    drift -> sharpen [label="redirect (tech/pricing/verdict/distribution)"];
+    sharpen -> complete [label="all 4 dimensions sharp\nor gaps acknowledged"];
+    complete -> validate [label="proceed"];
+    complete -> validate [label="proceed-with-caution" style=dashed];
+    complete -> validate [label="killer (override required)" style=dotted];
+}
+```
+
 ## Pass 1 — Free Dump
 
-Let the user talk. Capture the raw idea without judgment or structure. Ask open-ended questions to draw out the full picture:
+Let the user talk. Use `AskUserQuestion` to draw out the full picture without judgment or structure:
 
 - "Tell me the idea. Don't filter — just dump everything you're thinking."
 - "What triggered this? Did you see something, experience something, hear about something?"
 - "Who do you imagine using this?"
 
-Do NOT challenge anything yet. Do NOT organize into sections. The goal is to get the unfiltered thought out of the user's head.
+Ask one question at a time. Do NOT challenge anything yet. Do NOT organize into sections. The goal is to get the unfiltered thought out of the user's head.
 
 When the user seems done: "OK, I've got the raw dump. Now let me push on it."
 
 ## Pass 2 — Sharpen
 
-Reflect back what you heard, then systematically probe four dimensions. Each must be sharp before this phase can complete:
+Reflect back what you heard, then use `AskUserQuestion` to systematically probe four dimensions. Each must be sharp before this phase can complete.
+
+Ask about whichever dimension the previous answer naturally leads to. Follow the thread — don't march through a checklist.
+
+Ground to cover (in whatever order fits the conversation):
 
 ### 1. The Problem
 What specific problem does this solve? Not a category ("productivity") but a concrete pain ("freelance designers spend 3 hours/week chasing invoice payments").
 
 ### 2. Target User
-Who has this problem? Be specific — not "small businesses" but "solo consultants billing $5k-20k/month who currently track invoices in spreadsheets." If the user says "everyone," push back hard (see Red Flags).
+Who has this problem? Be specific — not "small businesses" but "solo consultants billing $5k-20k/month who currently track invoices in spreadsheets."
 
 ### 3. Why Now
 Why is this the right time? What changed — technology, regulation, market behavior, cultural shift — that makes this solvable or necessary now? If nothing changed, probe whether this is a "nice to have" that's always been ignorable.
@@ -45,22 +72,27 @@ Why is this the right time? What changed — technology, regulation, market beha
 ### 4. Differentiation
 What's the insight or angle? Not "we'll be better" but specifically how and why. What do existing alternatives get wrong, and why will this approach win?
 
-**For each dimension:** if the answer is vague, name the vagueness and ask for a sharper cut. Do not accept "we'll figure it out" or "it depends." If the user genuinely doesn't know, record it as an open question — don't fill in guesses.
+**Challenge weak answers procedurally.** When a user's answer matches a Red Flag below, respond with the specific pushback via `AskUserQuestion`. Do not accept the answer and move on.
+
+**Do NOT force answers.** If the user genuinely can't answer, that's a signal worth noting as an open question — not a blank to fill with guesses. Move to the next thread.
 
 ## Red Flags
 
+When you hear any of these, respond with the pushback directly in prose. Do not accept the answer and continue.
+
 | User says | Skill responds |
 |---|---|
-| "Everyone needs this" | "That's not a user. Who specifically — what role, what context, what are they doing when they hit this problem?" |
+| "Everyone needs this" | "That's not a user. Pick one person. Describe their day. When does this problem hit them?" |
 | "It's like X but better" | "Better how? What does X get wrong, and why hasn't X (or anyone else) fixed it?" |
 | "The market is huge" | "How huge? Which segment are you actually going after first? 'Huge market' has killed more startups than small markets." |
-| "There's no competition" | "There's always competition — even if it's spreadsheets, manual processes, or doing nothing. What do people do today?" |
+| "There's no competition" | "There's always competition — even if it's spreadsheets, manual processes, or doing nothing. What do people do today instead?" |
 | "We just need to build it and they'll come" | "That's a distribution assumption, not a plan. But we'll get to distribution later — right now, is the problem worth solving?" |
 | "It's obvious why this is needed" | "If it's obvious, make it concrete. State the problem in one sentence with a specific user." |
+| User can't answer a question | Don't fill in guesses. Note it as an open question in the artifact and move to the next thread. A gap is a signal, not a failure. |
 
 ## Boundary Enforcement
 
-If the conversation drifts toward ANY of these, redirect:
+**Never cross these boundaries.** If the conversation drifts toward ANY of these, redirect immediately:
 
 | Drift toward | Response |
 |---|---|
@@ -69,7 +101,7 @@ If the conversation drifts toward ANY of these, redirect:
 | Verdicts ("should we build this?") | "Too early. Sharpen the concept first — the verdict comes after 5 more phases of thinking." |
 | Distribution, marketing, channels | "We'll pressure-test distribution in GTM. For now: who's the user and what's their problem?" |
 
-This applies even if the user initiates it. Gently redirect every time.
+This applies even if the user initiates it. Redirect every time, no exceptions.
 
 ## Phase Transition
 

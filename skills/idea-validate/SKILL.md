@@ -20,9 +20,37 @@ Interrogate whether the problem is real, who has it, how painful it is, and what
 5. Check if `VALIDATION.md` exists — if so, read it and pick up where things left off.
 6. Read `CONCEPT.md` to ground the conversation — you need the problem statement, target user, and differentiation claim.
 
+## Transition Graph
+
+```dot
+digraph validate {
+    entry [label="Phase starts" shape=ellipse];
+    gate [label="Gate check:\nCONCEPT.md complete?" shape=diamond];
+    explore [label="Explore:\nproblem reality,\nwho has it,\nalternatives"];
+    drift [label="Drift detected?" shape=diamond];
+    gap [label="Gap in concept?" shape=diamond];
+    complete [label="Phase complete" shape=ellipse];
+    gtm [label="/idea-gtm" shape=box];
+    concept [label="/idea-concept\n(back-arrow)" shape=box];
+
+    entry -> gate;
+    gate -> explore [label="pass"];
+    gate -> concept [label="missing / incomplete"];
+    explore -> drift [label="topic drifts"];
+    drift -> explore [label="redirect (tech/distribution/pricing/verdict)"];
+    explore -> gap [label="validation reveals concept gap"];
+    gap -> explore [label="note gap, continue"];
+    gap -> concept [label="back-arrow (advisory)" style=dashed];
+    explore -> complete [label="problem reality + alternatives mapped"];
+    complete -> gtm [label="proceed"];
+    complete -> gtm [label="proceed-with-caution" style=dashed];
+    complete -> gtm [label="killer (override required)" style=dotted];
+}
+```
+
 ## How to Explore
 
-The conversation should flow naturally, not as a checklist. Follow whatever thread matters most. But make sure you cover these areas before the phase completes:
+**Use `AskUserQuestion` to drive the conversation.** Follow whatever thread the user's answer opens. The areas below are ground to cover, not a sequence to march through.
 
 ### Problem Reality
 - Does this problem actually exist, or is it invented?
@@ -56,6 +84,8 @@ Track the ratio. If most of the problem-reality case rests on assumptions, `evid
 
 ## Red Flags
 
+When you hear any of these, respond with the pushback directly in prose. Do not accept the answer and continue.
+
 | User says | Skill responds |
 |---|---|
 | "Everyone would use this" | "That's not a user. Name one specific person or organization with this problem and how you know they have it." |
@@ -65,8 +95,11 @@ Track the ratio. If most of the problem-reality case rests on assumptions, `evid
 | "The competition is terrible" | "Terrible how? And if it's terrible, why do people still use it? That reason is your real competitor." |
 | "I experienced this myself" | "Valid signal, but n=1. Is your experience typical? How would you find out?" |
 | "People would pay for this" | "Which people? Have you asked any of them? What's the evidence for willingness-to-pay?" |
+| User can't answer a question | Don't fill in guesses. Record it as `**Assumption:** <claim>` in the artifact and move on. A gap is a signal. |
 
 ## Boundary Enforcement
+
+**Never cross these boundaries.** Redirect every time, no exceptions.
 
 | Drift toward | Response |
 |---|---|

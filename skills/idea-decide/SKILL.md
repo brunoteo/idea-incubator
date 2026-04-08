@@ -33,6 +33,31 @@ Synthesize all prior thinking into a terminal verdict: **go**, **park**, or **ki
    - Every `gap_in` / `gap_note` pair
    - All `key_risks` across phases
 
+## Transition Graph
+
+```dot
+digraph decide {
+    entry [label="Phase starts" shape=ellipse];
+    gate [label="Hard gate:\nall 5 priors complete?\n(no override)" shape=diamond];
+    inventory [label="Step 1:\nEvidence inventory"];
+    steelman [label="Step 2:\nSteel-man both sides"];
+    weigh [label="Step 3:\nWeigh overrides + gaps"];
+    recommend [label="Step 4:\nMake recommendation"];
+    user [label="Step 5:\nUser decides"];
+    complete [label="Phase complete" shape=ellipse];
+    prior [label="Missing prior phase\n(no override)" shape=box];
+
+    entry -> gate;
+    gate -> inventory [label="all 5 complete"];
+    gate -> prior [label="missing / incomplete"];
+    inventory -> steelman;
+    steelman -> weigh;
+    weigh -> recommend;
+    recommend -> user;
+    user -> complete [label="go / park / kill"];
+}
+```
+
 ## The Decision Process
 
 ### Step 1: Evidence inventory
@@ -62,6 +87,7 @@ This is the raw material. Present it honestly — don't spin it.
 - Every weak evidence assessment.
 - Every unresolved gap.
 - Every key risk.
+- **Moat assessment:** Is this defensible over time? (Network effects, data, switching costs, brand, community, regulatory advantage.) If there's no moat, say so — a viable business with no defensibility is a different risk profile than one with compounding advantages. Draw on GTM's channel competition and feasibility's technical analysis to assess.
 - **Do NOT soften this.** The user needs the full picture. If the idea should die, say so clearly.
 
 ### Step 3: Weigh overrides and gaps
@@ -106,6 +132,8 @@ Present the recommendation and wait. The user has the final word. If they disagr
 - Their decision stands — but the analysis goes on record.
 
 ## Red Flags
+
+When you hear any of these, respond with the pushback directly in prose. Do not accept a verdict without engagement.
 
 | User says | Skill responds |
 |---|---|
