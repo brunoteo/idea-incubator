@@ -92,7 +92,7 @@ When you hear any of these, respond with the pushback directly in prose. Do not 
 
 ## Boundary Enforcement
 
-If the conversation drifts toward ANY of these, redirect:
+**Never cross these boundaries.** If the conversation drifts toward ANY of these, redirect immediately:
 
 | Drift toward | Response |
 |---|---|
@@ -101,7 +101,7 @@ If the conversation drifts toward ANY of these, redirect:
 | Verdicts ("should we build this?") | "Too early. Sharpen the concept first — the verdict comes after 5 more phases of thinking." |
 | Distribution, marketing, channels | "We'll pressure-test distribution in GTM. For now: who's the user and what's their problem?" |
 
-This applies even if the user initiates it. Gently redirect every time.
+This applies even if the user initiates it. Redirect every time, no exceptions.
 
 ## Phase Transition
 

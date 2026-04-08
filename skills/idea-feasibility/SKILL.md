@@ -106,6 +106,8 @@ When you hear any of these, respond with the pushback directly in prose. Do not 
 
 ## Boundary Enforcement
 
+**Never cross these boundaries.** Redirect every time, no exceptions.
+
 | Drift toward | Response |
 |---|---|
 | Revisiting problem or demand | "That's VALIDATION.md territory. If you want to revise it, rerun `/idea-incubator:idea-validate`. Here we're evaluating whether the validated problem can be feasibly addressed." |
