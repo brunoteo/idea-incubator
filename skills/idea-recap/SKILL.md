@@ -46,7 +46,7 @@ List every artifact where `overridden: true`, with the `override_reason`. These 
 
 ### Unresolved Gaps
 
-List every artifact where `gap_in` is not null, with the `gap_note`. These are depth gaps that were noted but never addressed.
+List every entry from every artifact's `gaps` array. These are depth gaps that were noted but never addressed.
 
 ### Verdict (if decided)
 

@@ -30,7 +30,7 @@ Synthesize all prior thinking into a terminal verdict: **go**, **park**, or **ki
    - Each phase's `verdict` (traffic light)
    - Each phase's `evidence_strength`
    - Every `overridden` / `override_reason` pair
-   - Every `gap_in` / `gap_note` pair
+   - Every entry in each phase's `gaps` array
    - All `key_risks` across phases
 
 ## Transition Graph

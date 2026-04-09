@@ -100,7 +100,7 @@ The user always has autonomy. The friction sits at the exact moment they ignore 
 
 When a later phase finds a significant gap in an earlier phase's work, it does **not** silently patch. It:
 
-1. Writes the gap to its own frontmatter (`gap_in: concept`).
+1. Adds the gap to its own frontmatter `gaps` array (e.g., `{ phase: "concept", note: "..." }`).
 2. Refuses to proceed (soft gate).
 3. Tells the user exactly which earlier phase to rerun.
 

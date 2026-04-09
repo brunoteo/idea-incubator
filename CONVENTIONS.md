@@ -27,10 +27,11 @@ evidence_strength: strong | medium | weak | n/a
 key_risks: []
 overridden: false
 override_reason: null
-gap_in: null
-gap_note: null
+gaps: []
 ---
 ```
+
+Each entry in `gaps` is an object: `{ phase: "<phase>", note: "<description>" }`. Empty array when no gaps found.
 
 ### DECISION.md
 
@@ -56,7 +57,7 @@ override_reason: null
 | `evidence_strength` | How much this phase's conclusions rest on evidence vs assumption. `strong` = most claims evidenced. `weak` = most claims are assumptions. Read by idea-decide. |
 | `key_risks` | Short risk tags. Scanned by idea-decide and idea-recap. |
 | `overridden` / `override_reason` | Set on the *current* artifact when the user pushed past a `killer` verdict from a *prior* phase to start this one. Override requires a reason — "just do it" is not accepted. |
-| `gap_in` / `gap_note` | Set when this phase noticed a significant depth gap in an earlier phase's work. Advisory only — does not block. idea-decide reads these. |
+| `gaps` | Array of `{ phase, note }` objects. Each entry records a significant depth gap this phase noticed in an earlier phase's work. Advisory only — does not block. idea-decide reads these. Empty array when no gaps found. |
 
 ## Gating Protocol
 
@@ -77,7 +78,7 @@ Then proceed. If the user says "just do it" without a reason, refuse again. Over
 
 When a skill notices a significant gap in an earlier phase's work during the conversation:
 
-1. Write to the current artifact's frontmatter: `gap_in: <phase>`, `gap_note: "<short description>"`
+1. Add an entry to the current artifact's frontmatter `gaps` array: `{ phase: "<phase>", note: "<short description>" }`. Multiple gaps in different prior phases can be recorded.
 2. Tell the user: "I'm noting a gap in <phase> — <summary>. You can rerun `/idea-incubator:idea-<phase>` to address it, or leave it. idea-decide will see this note."
 3. **Proceed regardless.** This is advisory, not blocking.
 
@@ -94,7 +95,7 @@ No skill modifies an earlier phase's artifact body. Trivial additions (e.g., a n
 - <date>: <finding>
 ```
 
-Anything non-trivial: write a back-arrow (`gap_in`), tell the user to rerun the earlier phase. Do not rewrite prior sections.
+Anything non-trivial: write a back-arrow (add to `gaps`), tell the user to rerun the earlier phase. Do not rewrite prior sections.
 
 ## Escalation Protocol
 
