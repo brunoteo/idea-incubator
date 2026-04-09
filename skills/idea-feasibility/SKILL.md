@@ -60,6 +60,8 @@ digraph feasibility {
 
 Feasibility doesn't exist in isolation — every sub-concern connects back to prior phases. When a finding in any dimension tensions against what GTM, validation, or concept established, surface it immediately. Don't save cross-cutting tensions for later — they're often the most important findings. Examples: a technical choice that breaks unit economics, an operational burden that doesn't scale to GTM's volume, a legal constraint that blocks the primary channel, a resource requirement that exceeds what the market size justifies.
 
+When you surface a tension, the user will either resolve it (e.g., change approach) or accept the risk and move on. Both are valid — but they have different consequences for the artifact. Resolved tensions are recorded as resolved in Cross-Cutting Tensions. Accepted-but-unresolved tensions become entries in `key_risks` and pull `evidence_strength` down, which idea-decide will weigh against the idea.
+
 ### 1. Technical Feasibility
 - What are the core technical challenges? (Not "what's the tech stack" — what's *hard* about building this?)
 - Are there technical risks or unknowns? Things that might not work?
