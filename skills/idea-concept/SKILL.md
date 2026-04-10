@@ -136,8 +136,7 @@ evidence_strength: n/a
 key_risks: []
 overridden: false
 override_reason: null
-gap_in: null
-gap_note: null
+gaps: []
 ---
 ````
 

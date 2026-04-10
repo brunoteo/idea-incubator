@@ -14,7 +14,7 @@ This repository is a thinking space for business/product ideas. Ideas move throu
    - Current phase (the latest artifact with `status: complete`, or the one with `status: in-progress`)
    - Last verdict (the most recent phase's `verdict` field)
    - Any overrides taken
-   - Any unresolved gaps (`gap_in` fields)
+   - Any unresolved gaps (`gaps` arrays)
 3. Present findings and route.
 
 ## What to Show the User
